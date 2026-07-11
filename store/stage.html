@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Backdrop page for generating the 1280x800 Chrome Web Store screenshots.
+     Not shipped in the extension package. Serve the project root and open
+     /store/stage.html; the live popup renders inside the iframe. -->
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>لقطات المتجر</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        width: 1280px;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 72px;
+        font-family: "Amiri Quran", "Geeza Pro", serif;
+        background: linear-gradient(160deg, #f3faf6 0%, #d7ece3 55%, #bfe0d5 100%);
+        overflow: hidden;
+      }
+      .pitch { max-width: 420px; color: #14342c; }
+      .pitch h1 { font-size: 52px; margin: 0 0 10px; color: #0f766e; }
+      .pitch p.tag { font-size: 24px; margin: 0 0 28px; color: #1c3a32; }
+      .pitch ul { list-style: none; padding: 0; margin: 0; font-size: 20px; line-height: 2.1; }
+      .pitch li::before { content: "◈ "; color: #0f766e; }
+      .frame {
+        width: 546px;
+        height: 546px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(15, 118, 110, 0.35);
+        background: #f3faf6;
+        flex-shrink: 0;
+      }
+      .frame iframe { width: 546px; height: 546px; border: none; }
+    </style>
+  </head>
+  <body>
+    <div class="pitch">
+      <h1>قرآن — آية بآية</h1>
+      <p class="tag">اقرأ القرآن الكريم آيةً آية من متصفحك</p>
+      <ul>
+        <li>يحفظ آخر موضع قراءة تلقائيًا</li>
+        <li>بحث بالسورة والآية دون تشكيل</li>
+        <li>يعمل دون اتصال بالإنترنت</li>
+        <li>خفيف ولا يجمع أي بيانات</li>
+      </ul>
+    </div>
+    <div class="frame"><iframe src="/popup.html"></iframe></div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>قرآن — آية بآية</title>
+    <link rel="stylesheet" href="css/popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="surah-name" id="surah-name"></div>
+      <div class="header-meta">
+        <span id="ayah-count"></span>
+        <span class="dot">·</span>
+        <span id="juz-number"></span>
+      </div>
+    </header>
+
+    <main class="ayah-card">
+      <p class="ayah-text" id="ayah-text"></p>
+    </main>
+
+    <footer class="nav">
+      <button class="nav-btn" id="prev-btn" aria-label="الآية السابقة">
+        ‹ السابقة
+      </button>
+      <div class="nav-dropdowns" id="surah-dropdown-container"></div>
+      <div class="nav-dropdowns" id="verse-dropdown-container"></div>
+      <button class="nav-btn" id="next-btn" aria-label="الآية التالية">
+        التالية ›
+      </button>
+    </footer>
+
+    <script type="module" src="js/popup.js"></script>
+  </body>
+</html>
