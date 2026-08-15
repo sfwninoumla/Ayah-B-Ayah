@@ -10,6 +10,55 @@ Open the popup → read an ayah in the KFGQPC Uthman Taha Naskh typeface → tap
 
 Principles: no framework, no build step, no background worker, no network at runtime, and only one permission (`storage`). The full Quran text (6,236 ayahs) and the font are bundled; only the ~30 KB index plus the current surah are loaded per popup open.
 
+## Features, screen by screen
+
+The screenshot above is the reading view: one ayah centred in the card, the surah
+name, the ayah-of-total, and the juz across the header, and **التالية / السابقة**
+in the footer. Navigation crosses surah boundaries on its own, and every move is
+saved, so closing the browser mid-surah costs you nothing.
+
+### Jump to any surah or ayah — and search without tashkeel
+
+![the verse picker open, showing results for a search typed in plain Arabic](store/screenshots/screenshot-2-picker.png)
+
+The two footer buttons open pickers: one for the surah, one for the ayah. Both
+accept a name or a number, and the ayah picker also searches **verse text typed
+the ordinary way** — no tashkeel, no hamza seats, `ة` or `ه`, either is fine. The
+shot shows `على كل شيء قدير` matching six ayahs of al-Baqarah whose text is fully
+vocalised (`عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ`). Results wrap to two lines so you can tell
+similar verses apart, and the search box only appears for surahs longer than 20
+ayahs, where it earns its place.
+
+### Set the text size you actually read at
+
+![the popup with the ayah rendered at a large font size](store/screenshots/screenshot-3-font-size.png)
+
+The **أ+ / أ−** buttons in the header step the ayah between 16 and 44 px, and the
+current value sits between them so you always know where you are. The two alef
+glyphs are drawn at different sizes, so the buttons say what they change. Your
+choice is stored next to your reading position and restored on the next open; the
+ayah-number marker scales with the text, and long ayahs scroll inside the card.
+
+### Read without touching the mouse
+
+![the keyboard shortcuts dialog listing every binding](store/screenshots/screenshot-4-shortcuts.png)
+
+The **؟** button opens this dialog, which is the one place the shortcut list is
+written for the reader. Arrows follow direction of travel rather than
+next/previous — in an RTL layout forward is leftward, which is where التالية
+sits. **Space** is the "read on" key: it pages down a long ayah first and moves
+to the next ayah only once you have reached the end, so one key carries you
+through the whole text. See the [full table](#keyboard-shortcuts) below.
+
+### Offline, and it stays that way
+
+![the popup showing an ayah from surah al-Kahf alongside the privacy points](store/screenshots/screenshot-5-offline.png)
+
+All 6,236 ayahs and both font files ship inside the extension, so there is no
+network request at runtime — not on first open, not ever. The single permission
+is `storage`, used only for your reading position and font size, both local to
+the device. No accounts, no analytics, no ads.
+
 ## Folder structure
 
 | Path | What it is |
